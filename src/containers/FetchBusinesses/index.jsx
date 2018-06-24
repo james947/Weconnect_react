@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-import getBusinesses from '../../redux/actions';
+import getBusinesses from '../../redux/actions/actions';
 
 class FetchBusinesses extends Component {
   constructor(props) {
@@ -14,13 +14,14 @@ class FetchBusinesses extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.businesses);
     axios.get('https://weconnect-v3.herokuapp.com/api/v1/businesses')
       .then(response => this.props.getBusinesses(response));
   }
 
   render() {
     const renderBusinesses = this.props.businesses.map(business => (
-      <div className="card" key={business.id}>
+      <div className="card col-md-4" key={business.id}>
         <div className="card-body">
           <h5>{business.businessname}</h5>
           <p>{business.description}</p>
@@ -35,8 +36,10 @@ class FetchBusinesses extends Component {
     ));
 
     return (
-      <div className="conatiner offset-md-4 col-md-4 customCard">
-        { renderBusinesses }
+      <div className="container customCard">
+        <div className="row">
+          { renderBusinesses }
+        </div>
       </div>
     );
   }
