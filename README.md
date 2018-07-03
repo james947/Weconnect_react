@@ -3,7 +3,8 @@
 
  **Application Features**
 
- * Creating Businesses
+Creating Businesses
+---
  
 
  A user can be able to perform the following once the application is ready:
