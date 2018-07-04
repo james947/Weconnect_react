@@ -9,11 +9,19 @@ import './index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './reducers';
+import { userLoggedIn } from './redux/actions/user_auth';
 
+// store configuration
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
+
+// repopulating redux state
+if (localStorage.auth_token) {
+  const user = { user: localStorage.auth_token };
+  store.dispatch(userLoggedIn(user));
+}
 
 ReactDOM.render(
   <BrowserRouter>
