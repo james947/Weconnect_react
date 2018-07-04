@@ -1,7 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { userLogoutRequest } from '../../redux/actions/user_auth';
 
-const NavBar = () => (
+// destructure into method signature
+const NavBar = ({ isAunthenticated, logout }) => (
+
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <Link className="navbar-brand"to="/">WeConnect</Link>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Toggle navigation">
@@ -9,20 +14,15 @@ const NavBar = () => (
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
-          <Link className="nav-link"to="/">Profile</Link>
-        </li>
         <li className="nav-item active">
-          <Link className="nav-link"to="/">View Business</Link>
-        </li>
-        <li className="nav-item active">
-          <Link className="nav-link"to="/add_business">New Business</Link>
+          <Link className="nav-link" to="/businesses">Businesses</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link"to="/">Search</Link>
+          <Link className="nav-link" to="/add-business">Add Business</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link disabled"to="/">Logout</Link>
+          {isAunthenticated ? <Link className="nav-link" to="/login" onClick={() => logout()}>Logout</Link> : <Link className="nav-link" to="">Login</Link>}
+
         </li>
       </ul>
     </div>
@@ -30,4 +30,16 @@ const NavBar = () => (
 
 );
 
-export default NavBar;
+NavBar.propTypes = {
+  isAunthenticated: PropTypes.bool.isRequired,
+  logout: PropTypes.func.isRequired
+};
+
+
+function mapStateToProps(state) {
+  return {
+    isAunthenticated: !!state.user.token
+  };
+}
+
+export default connect(mapStateToProps, { logout: userLogoutRequest })(NavBar);
