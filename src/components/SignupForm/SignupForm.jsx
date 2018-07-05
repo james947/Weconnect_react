@@ -5,7 +5,7 @@ import './index.css';
 
 
 const SignupForm = (props) => {
-  const { data } = props.state;
+  const { data, errors } = props.state;
   return (
     <div>
       <div className="signup">
@@ -16,22 +16,26 @@ const SignupForm = (props) => {
               <form onSubmit={props.onSubmit}>
                 <div className="form-group">
                   <label htmlFor="businessName">Email</label>
+                  <p className="errors">{ errors.message }</p>
+                  <p className="errors" >{errors.email}</p>
                   <input type="text" className="form-control" onChange={props.onChange} value={data.email || ""} name="email" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="businessName">Username</label>
+                  <p className="errors" >{errors.username}</p>
                   <input type="text" className="form-control" onChange={props.onChange} value={data.username || ""} name="username" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">Password</label>
+                  <p className="errors" >{errors.password}</p>
                   <input type="password" className="form-control" onChange={props.onChange} value={data.password || ""} name="password" />
                 </div>
                 <button type="submit" className="btn btn-success btn-block">Get Started</button>
               </form>
               <div className="link-auth">
-                <Link to="/" style={{ textDecoration: "none" }}>Already have an Account?</Link>
+                <Link to="/login" style={{ textDecoration: "none" }}>Already have an Account?</Link>
               </div>
-            </div>`
+            </div>
           </div>
         </div>
       </div>

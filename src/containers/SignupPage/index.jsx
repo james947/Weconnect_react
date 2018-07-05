@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import SignupForm from '../../components/SignupForm/SignupForm';
-import { userSignupRequest } from '../../redux/actions/actions';
+import { userSignupRequest } from '../../redux/actions/user_auth';
 
 export const validate = (data) => {
   const errors = {};
-  if (data.username.length < 3) errors.username = 'Username should not be atleast 3 characters';
+  if (!data.email) errors.email = 'Username should not be atleast 3 characters';
+  if (!data.username) errors.username = 'Email should not be atleast 3 characters';
+  if (!data.password) errors.password = 'Password should not be atleast 3 characters';
   return errors;
 };
 
@@ -30,7 +32,6 @@ class SignupPage extends React.Component {
   }
 
   onChange(e) {
-    console.log(this.state.data);
     this.setState({ data: { ...this.state.data, [e.target.name]: e.target.value } });
   }
 
@@ -38,7 +39,6 @@ class SignupPage extends React.Component {
     e.preventDefault();
     const errors = validate(this.state.data);
     this.setState({ errors });
-    console.log({ errors });
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
       this.props.userSignupRequest(this.state.data).then(data => {
