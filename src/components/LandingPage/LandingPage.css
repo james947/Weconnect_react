@@ -1,0 +1,8 @@
+.landing
+{
+ 
+    font-family: sans-serif;
+    background-image: url('../../assets/images/img.jpg');
+    background-repeat: no-repeat;
+    min-height:100vh;
+}
