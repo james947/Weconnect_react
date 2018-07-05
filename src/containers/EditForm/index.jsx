@@ -50,13 +50,14 @@ class EditPage extends React.Component {
   }
 
   onSubmit = (e) => {
+
     e.preventDefault();
     const errors = validate(this.state.data);
     this.setState({ errors });
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
       this.props.editBusiness(this.state.data, this.state.data.id).then(() => {
-        this.props.history.push('/businesses');
+        this.props.history.push(`/businesses/${this.state.data.id}`);
         swal("business successfully edited", "success");
       })
         .catch(err => {
