@@ -1,3 +1,4 @@
+/* global localStorage */
 
 import { USER_LOGGED_IN, USER_LOGGED_OUT } from '../../types';
 import { apiRequest } from '../../apiRequests';
@@ -20,7 +21,7 @@ export const userLoginRequest = userData => (dispatch) =>
   apiRequest.user.login(userData).then(user => {
     const { token } = user;
     localStorage.setItem('auth_token', token);
-    dispatch(userLoggedIn(user));
+    dispatch(userLoggedIn());
   });
 
 
