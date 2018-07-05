@@ -74,7 +74,7 @@ class FetchBusinesses extends Component {
 
 // takes a piece of apps state and passes it as a prop to the component
 const mapStateToProps = state => ({
-  businesses: state.business.businesses
+  businesses: state.businesses
 
 });
 
