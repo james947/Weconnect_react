@@ -6,9 +6,17 @@ export const instance = axios.create({
   timeout: 20000,
   headers: {
     "Accept": 'application/json',
-    "ContentType": 'application/json',
-    'x-access-token': localStorage.getItem('auth_token')
+    "ContentType": 'application/json'
   }
+});
+
+
+instance.interceptors.request.use((config)=>{
+  const accessToken = localStorage.getItem('auth_token');
+  if(accessToken){
+      config.headers.Authorization = accessToken;
+  }
+  return config;
 });
 
 
