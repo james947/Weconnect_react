@@ -1,16 +1,10 @@
 import * as types from '../../types';
 
-const initialState = {
-  businesses: []
-};
 
-export default function fetchBusinessReduce(state = initialState, action) {
+export default function businesses(state = [], action) {
   switch (action.type) {
   case types.GET_BUSINESS:
-    return {
-      ...state,
-      businesses: action.payload
-    };
+    return action.payload
 
   case types.GET_BUSINES:
     return {
