@@ -60,6 +60,7 @@ class EditPage extends React.Component {
         swal("business successfully edited", "success");
       })
         .catch(err => {
+          console.log('fcgvhbjnkl', err)
           swal({ title: err.response.data.message });
         });
     }
