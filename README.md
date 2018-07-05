@@ -1,3 +1,5 @@
+ [![Build Status](https://travis-ci.org/james947/Weconnect_react.svg?branch=ch-implement-react-development-setup-%23158019435)](https://travis-ci.org/james947/Weconnect_react)
+
  # WeConnect_react
  A web application that provides a platform for businesses owners to register and connect.
 
