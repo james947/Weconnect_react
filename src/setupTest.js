@@ -1,3 +1,6 @@
+import React from 'react';
+// import Enzyme, { shallow } from 'enzyme';
+
 class LocalStorageMock {
     constructor() {
       this.store = {};
@@ -21,3 +24,5 @@ class LocalStorageMock {
   }
   
   global.localStorage = new LocalStorageMock();
+  // global.shallow = shallow;
+  // global.React = React;
