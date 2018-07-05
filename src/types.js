@@ -1,0 +1,11 @@
+export const USER_LOGGED_IN = 'USER_LOGGED_IN';
+export const USER_LOGGED_OUT = 'USER_LOGGED_OUT';
+export const ADD_NEW_BUSINESS = 'ADD_NEW_BUSINESS';
+export const EDIT_BUSINESS = 'EDIT_BUSINESS';
+export const DELETE_BUSINESS = 'DELETE_BUSINESS';
+export const GET_BUSINESS = 'GET_BUSINESS';
+export const GET_BUSINES = 'GET_BUSINES';
+export const GET_BUSINESS_BY_ID = 'GET_BUSINESS_BY_ID';
+export const GET_REVIEWS = 'GET_REVIEWS';
+export const ADD_REVIEW = 'ADD_REVIEW';
+
