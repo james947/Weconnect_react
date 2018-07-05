@@ -12,7 +12,6 @@ const ReviewsDisplay = (props) => (
       {props.state.length !== 0 ?
         props.state.map((review) =>
           (<div className="card-body card-reviews">
-            {console.log('zsdxgfchgvjhbkjnk', props.state)}
             <p className="card-text"> <span className="badge badge-info">Reviewer </span> {review.reviewer}</p>
             <p className="card-text"> <span className="badge badge-info">Review </span> {review.review}</p>
             <p className="card-text"> <span className="badge badge-info" /><small> {review.created_at}</small></p><hr/>

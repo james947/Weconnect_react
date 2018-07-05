@@ -16,7 +16,8 @@ body {
 }
 
 .wrapper {
-  min-height: 100vh;
+  height: calc(100vw * (9/16));
+  max-height: calc(20em * (9/16));
 }
 footer {
     background-color: #000000;
