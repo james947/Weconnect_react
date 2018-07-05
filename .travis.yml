@@ -7,3 +7,5 @@ cache:
 script:
   - npm test #Runs Tests
   - npm run build #Creats a production build
+ after_script:
+  - coveralls
