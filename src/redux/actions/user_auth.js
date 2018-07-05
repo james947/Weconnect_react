@@ -21,7 +21,7 @@ export const userLoginRequest = userData => (dispatch) =>
   apiRequest.user.login(userData).then(user => {
     const { token } = user;
     localStorage.setItem('auth_token', token);
-    dispatch(userLoggedIn());
+    dispatch(userLoggedIn(user));
   });
 
 
