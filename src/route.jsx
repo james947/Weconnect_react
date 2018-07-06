@@ -11,7 +11,7 @@ import ProfilePage from './containers/BusinessProfile/index';
 import EditPage from './containers/EditForm';
 import PasswordPage from './containers/PasswordPage';
 import SearchBusiness from './containers/SeachBusiness';
-import Introspection from './containers/ReactVersion';
+
 
 const Routes = () =>
   (
@@ -27,7 +27,6 @@ const Routes = () =>
       <Route exact path="/businesses/:id" component={ProfilePage} />
       <Route exact path="change-password" component={PasswordPage} />
       <Route exact path="/search" component={SearchBusiness} />
-      <Route exact path="/react" component={Introspection} />
     </div>
   );
 
