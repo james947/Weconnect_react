@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Suggestions from './Suggesions'
 import NavBar from '../../components/NavBar/NavBar';
-import swal from 'sweetalert';
 
 
 class SearchPage extends Component {
@@ -39,7 +38,8 @@ class SearchPage extends Component {
                 }
 
             }
-            else if (this.state.location && this.state.location.length > 0) 
+            else if (this.state.location && this.state.location.length > 0) {
+
                 if (this.state.location.length) {
                     this.getInfo()
                 }
