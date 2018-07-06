@@ -7,9 +7,8 @@ export default function businesses(state = [], action) {
     return action.payload
 
   case types.GET_BUSINES:
-    return {
-      businesses: action.payload
-    };
+    return  action.payload
+  
 
 
   case types.DELETE_BUSINESS:
