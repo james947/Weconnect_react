@@ -17,8 +17,11 @@ const NavBar = ({ isAunthenticated, logout }) => (
         <li className="nav-item active">
           <Link className="nav-link" to="/businesses">Businesses</Link>
         </li>
+        <li className="nav-item active">
+          <Link className="nav-link" to="/search">Search</Link>
+        </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/add-business">Add Business</Link>
+        {isAunthenticated ? <Link className="nav-link" to="/add-business">Add Business</Link> : null }
         </li>
         <li className="nav-item">
           {isAunthenticated ? <Link className="nav-link" to="/login" onClick={() => logout()}>Logout</Link> : <Link className="nav-link" to="">Login</Link>}
