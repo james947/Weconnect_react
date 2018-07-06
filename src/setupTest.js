@@ -1,5 +1,7 @@
 import React from 'react';
-// import Enzyme, { shallow } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 class LocalStorageMock {
     constructor() {
@@ -24,5 +26,7 @@ class LocalStorageMock {
   }
   
   global.localStorage = new LocalStorageMock();
-  // global.shallow = shallow;
+  global.shallow = shallow;
   // global.React = React;
+
+configure({ adapter: new Adapter() });
