@@ -28,6 +28,7 @@ class FetchBusinesses extends Component {
   }
 
   handleSearch = e => {
+    e.preventDefault;
     this.setState({
       search: { ...this.state.search, [e.target.name]: e.target.value },
     }, () => {
