@@ -17,7 +17,7 @@ const SideNav = (props) => (
         <Link className="nav-link" to={{ pathname: '/edit-business', query: { business: props } }}>Edit Business</Link>
       </li>
       <li className="nav-item">
-        <a className="btn" onClick={e => { e.preventDefault(); props.deleteBusiness(props.state.id); }} >Delete Business</a>
+        <button className="btn" onClick={ () => props.deleteBusiness(props.state.id) } >Delete Business</button>
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/change-password">Change Password</Link>
