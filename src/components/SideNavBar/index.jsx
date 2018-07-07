@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteBusiness } from '../../redux/actions/business';
+import DeleteBusiness from '../../containers/DeleteBusiness';
 
 const SideNav = (props) => (
 
@@ -11,31 +12,34 @@ const SideNav = (props) => (
     <ul className="nav  flex-column">
       <h4>@<small>{props.state.owner}</small></h4>
       <li className="nav-item nav-pills">
-        <Link className="nav-link active" to="/profile">Profile</Link>
+        <Link className="nav-link active" to={`/businesses/${props.state.id}`}>Profile</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to={{ pathname: '/edit-business', query: { business: props } }}>Edit Business</Link>
+       { props.isOwner ? <Link className="nav-link" to={{ pathname: '/edit-business', query: { business: props } }}>Edit Business</Link> : null}
       </li>
-      <li className="nav-item">
-        <button className="btn" onClick={ () => props.deleteBusiness(props.state.id) } >Delete Business</button>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link" to="/change-password">Change Password</Link>
-      </li>
+      { props.isOwner ?  <div><DeleteBusiness id={props.state.id}/></div>: null}
     </ul>
-
   </div>
 
 
 );
 
+
 SideNav.propTypes = {
-  deleteBusiness: PropTypes.bool.isRequired
+  isAunthenticated: PropTypes.bool.isRequired,
+  logout: PropTypes.func.isRequired
 };
+
+
+function mapStateToProps(state) {
+  return {
+    isOwner: !state.businesses.owner
+  };
+}
 
 //Dipspatches actions to be used as props in this component
 const mapDispatchToProps = dispatch => bindActionCreators({
   deleteBusiness
 }, dispatch);
 
-export default connect(null, mapDispatchToProps)(SideNav);
+export default connect(mapStateToProps, mapDispatchToProps)(SideNav);
