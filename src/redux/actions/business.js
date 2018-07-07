@@ -14,6 +14,10 @@ export function create(businessData) {
     });
 }
 
+export const getBusinessesSuccess = response => ({
+  type: 'GET_BUSINESS',
+  payload: response.results
+});
 
 export const deletedBusiness = (id) => ({
   type: types.DELETE_BUSINESS,
@@ -36,41 +40,24 @@ export const newReview = (reviews) => ({
   reviews
 });
 
+export const filteredBusinessesSuccess = (businesses) => ({
+  type: types.FILTER_BUSINESS,
+  businesses
+});
+
+
 export function deleteBusiness(businessId) {
-  swal({
-    title: "Are you sure?",
-    text: "Once deleted, you will not be able to recover this business!",
-    icon: "warning",
-    buttons: true,
-    dangerMode: true,
-  })
-    .then((willDelete) => {
-      if (willDelete) {
-        return dispatch =>
-          apiRequest.business.delete(businessId).then(id => {
-            dispatch(deletedBusiness(id));
-            window.location.assign('/businesses');
-          });
-      } else {
-        swal("Your business is safe!");
-      }
-    });
-
-
-  // .then((willDelete) => {
-  //   if (willDelete) {
-  //     swal("Poof! business has been deleted!", {
-  //       icon: "success",
-  //     });
-  //   } else {
-  //     swal("Your business is safe!");
-  //   }
-  // });
-  return dispatch =>
-    apiRequest.business.delete(businessId).then(id => {
-      dispatch(deletedBusiness(id));
-      window.location.assign('/businesses');
-    });
+  console.log('WDFERG', businessId)
+  return dispatch => (apiRequest.business.delete(businessId)
+    .then(() => {
+        dispatch(deletedBusiness(businessId))
+        window.location.assign('/businesses')
+        swal("business Successfully deleted")
+    })
+    .catch(err=>{
+      swal(err.response.data.message);
+    })
+  )
 }
 
 export function editBusiness(updatedBusiness, businessId) {
@@ -82,7 +69,7 @@ export function editBusiness(updatedBusiness, businessId) {
 
 export function getReviews(businessId) {
   return dispatch =>
-    apiRequest.business.get(businessId).then(reviews => {
+    apiRequest.business.reviews(businessId).then(reviews => {
       dispatch(gotReviews(reviews));
     });
 }
@@ -94,3 +81,14 @@ export function addReviews(businessId, review) {
     });
 }
 
+export function getBusinesses() {
+  return dispatch =>
+    apiRequest.business.businesses().then(businesses => {
+      dispatch(getBusinessesSuccess(businesses));
+    });
+}
+
+export function filterBusiness(businesses) {
+  return dispatch =>
+      dispatch(filteredBusinessesSuccess(businesses));
+}
