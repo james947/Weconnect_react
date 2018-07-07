@@ -3,7 +3,7 @@ import * as actions from '../../redux/actions/user_auth';
 
 
 describe('actions', () => {
-    it('should create an action user loggedin', () => {
+    it('should render a business profile page', () => {
       const text = 'token'
       const expectedAction = {
         type: types.USER_LOGGED_IN,
