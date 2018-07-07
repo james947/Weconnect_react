@@ -7,7 +7,6 @@ import ReviewsDisplay from '../BusinessReviews/index';
 
 const BusinessProfile = (props) => {
   const { data, reviews } = props.state;
-  console.log("reviews zetu", reviews);
 
   return (
     <div>
