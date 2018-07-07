@@ -43,7 +43,7 @@ class ReviewPage extends React.Component {
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
       this.props.addReviews(businessId, this.state.data).then(() => {
-        swal("Review in successfully", "success");
+        window.location.assign(`/businesses/${businessId}`);
       })
         .catch(err => {
           swal({ title: err.response.data.message });
