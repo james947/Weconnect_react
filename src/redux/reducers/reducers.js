@@ -12,7 +12,7 @@ export default function businesses(state = [], action) {
 
 
   case types.DELETE_BUSINESS:
-    return { business: state.businesses.filter(businesses => businesses.business.id !== action.id) };
+    return state.filter(businesses => businesses.id !== action.id);
 
   case types.EDIT_BUSINESS:
     return state.map(businesses => (businesses.id === action.business.id ?
