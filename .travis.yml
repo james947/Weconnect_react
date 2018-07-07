@@ -1,8 +1,10 @@
+
 language: node_js
-node_js:
-  - "stable"
+
+node_js: 
+- stable
+before_install:
+  - npm install -g npm
+
 script:
-  - npm test #Runs Tests
-  - npm run build #Creats a production build
- after_script:
-  - coveralls
+  - npm run test
