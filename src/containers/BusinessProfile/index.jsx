@@ -15,6 +15,7 @@ class ProfilePage extends Component {
   componentDidMount() {
     axios.get(`https://weconnect-v3.herokuapp.com/api/v1/businesses/${this.props.match.params['id']}`)
       .then(response => this.setState({ data: response.data }));
+      
     axios.get(`https://weconnect-v3.herokuapp.com/api/v1/businesses/${this.props.match.params['id']}/reviews`)
       .then(response => this.setState({ reviews: response.data }));
   }
