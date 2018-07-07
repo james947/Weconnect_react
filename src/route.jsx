@@ -10,7 +10,6 @@ import { TermsConditions } from './components/TermsAndConditions';
 import ProfilePage from './containers/BusinessProfile/index';
 import EditPage from './containers/EditForm';
 import PasswordPage from './containers/PasswordPage';
-import SearchBusiness from './containers/SeachBusiness';
 
 
 const Routes = () =>
@@ -26,7 +25,7 @@ const Routes = () =>
       <Route exact path="/terms" component={TermsConditions} />
       <Route exact path="/businesses/:id" component={ProfilePage} />
       <Route exact path="change-password" component={PasswordPage} />
-      <Route exact path="/search" component={SearchBusiness} />
+
     </div>
   );
 
