@@ -8,4 +8,5 @@ export const GET_BUSINES = 'GET_BUSINES';
 export const GET_BUSINESS_BY_ID = 'GET_BUSINESS_BY_ID';
 export const GET_REVIEWS = 'GET_REVIEWS';
 export const ADD_REVIEW = 'ADD_REVIEW';
+export const FILTER_BUSINESS = 'FILTER_BUSINESS';
 
