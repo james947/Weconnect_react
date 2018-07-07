@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 export const instance = axios.create({
   baseURL: 'https://weconnect-v3.herokuapp.com/api/v1',
   timeout: 20000,
@@ -37,16 +36,18 @@ export const apiRequest = {
   business: {
     create: (newBusiness) => instance.post('/businesses', newBusiness)
       .then(response => response.data),
+    businesses: () => instance.get('/businesses')
+      .then(response => response.data),
     fetch: (params) => instance.get(`/businesses/${params.id}`)
       .then(response => response.data),
     edit: (updatedBusiness, businessId) => instance.put(`/businesses/${businessId}`, updatedBusiness)
       .then(response => response.data),
     delete: (businessId) => instance.delete(`/businesses/${businessId}`)
       .then(response => response.data),
+
     reviews: (businessId) => instance.get(`/businesses/${businessId}/reviews`)
       .then(response => response.data),
     postReview: (businessId, review) => {
-      console.log(localStorage.getItem('auth_token'));
       return instance.post(`/businesses/${businessId}/reviews`, review)
         .then(response => response.data);
     }
@@ -55,4 +56,3 @@ export const apiRequest = {
 
 };
 export default apiRequest;
-
