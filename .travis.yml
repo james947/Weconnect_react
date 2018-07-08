@@ -6,9 +6,5 @@ node_js:
 before_install:
   - npm install -g npm
 
-after_success:
-  - coveralls
-  - codecov
-
 script:
   - npm run test
