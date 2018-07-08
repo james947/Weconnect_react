@@ -2,15 +2,15 @@ import swal from 'sweetalert';
 import * as types from '../../types';
 import { apiRequest } from '../../apiRequests';
 
-export const newBusiness = (newBusines) => ({
+export const newBusiness = (business) => ({
   type: types.ADD_NEW_BUSINESS,
-  newBusiness
+  business
 });
 
 export function create(businessData) {
   return dispatch =>
     apiRequest.business.create(businessData).then(business => {
-      dispatch(newBusiness);
+      dispatch(business);
     });
 }
 
