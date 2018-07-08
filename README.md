@@ -1,5 +1,5 @@
  [![Build Status](https://travis-ci.org/james947/Weconnect_react.svg?branch=develop&service=github)](https://travis-ci.org/james947/Weconnect_react)
-[![Coverage Status](https://coveralls.io/repos/github/james947/Weconnect_react/badge.svg?branch=develop&service=github)](https://coveralls.io/github/james947/Weconnect_react?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/james947/Weconnect_react/badge.svg?branch=develop&service=github)](https://coveralls.io/github/james947/Weconnect_react?branch=master)
 [![codecov](https://codecov.io/gh/james947/Weconnect_react/branch/develop/graph/badge.svg)](https://codecov.io/gh/james947/Weconnect_react)
 [![Maintainability](https://api.codeclimate.com/v1/badges/27715c28b1951e349d86/maintainability)](https://codeclimate.com/github/james947/Weconnect_react/maintainability)
  # WeConnect_react
