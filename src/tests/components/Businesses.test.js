@@ -2,7 +2,7 @@ import React from "react";
 import {shallow} from "enzyme";
 import Businesses from "../../components/Businesses";
 
-describe("businesses", () => {
+describe("<Businesses/>", () => {
     it("it should render a  link", () => {
         expect (
             shallow(<Businesses/>).find("div.col-md-10").exists()).toBe(true);
