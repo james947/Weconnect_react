@@ -4,12 +4,12 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/27715c28b1951e349d86/maintainability)](https://codeclimate.com/github/james947/Weconnect_react/maintainability)
 [Imgur](https://i.imgur.com/makfWLG.png)
 [Imgur](https://i.imgur.com/hJqRcaM.png)
- # WeConnect_react
+
+WeConnect_react
+---
 WeConnect is a web application for the WeConnect API. This platform connects business owners and customers by enabling the owners of businesses to post their businesses and making it available to the customers.
 
- **Application Features**
-
-Creating Businesses
+ Application Features
 ---
  
  A user can be able to perform the following once the application is ready:
@@ -23,7 +23,7 @@ Creating Businesses
 
 
 Prerequisites
-----
+---
 To run the application you can use the following tested browsers:
 * Chrome
 * Safari - mac osx users
@@ -78,3 +78,24 @@ Browser Enpoints
 
  **Running tests**
  * use `npm run test` to run all the tests
+
+ Documentation
+---
+[Click! to access the docs](https://app.apiary.io/weconnect13/editor)
+
+Versioning
+---
+- Version 0.0.1
+
+Contributing
+---
+- Contributing to the development of this app is allowed just fork it!!!
+  do changes and create a pull request...
+
+Authors
+---
+* James Muriuki
+
+Acknowledgments
+---
+1. Andela kenya
