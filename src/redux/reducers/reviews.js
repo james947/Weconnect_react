@@ -11,7 +11,7 @@ export default function fetchReviews(state = initialState, action) {
       ...state,
       reviews: action.reviews
     };
-  case types.ADD_REVIEW:
+  case types.NEW_REVIEW:
     return {
       ...state,
       reviews: action.reviews
