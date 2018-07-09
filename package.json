@@ -61,7 +61,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "jest --coverage --coverageReporters=text-lcov --collectCoverageFrom=src/components/*js | coveralls"
+    "test": "jest --coverage --coverageReporters=text-lcov --collectCoverageFrom=src/**/*js | coveralls"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
