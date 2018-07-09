@@ -36,7 +36,7 @@ export const gotReviews = (reviews) => ({
 });
 
 export const newReview = (reviews) => ({
-  type: types.GET_REVIEWS,
+  type: types.NEW_REVIEW,
   reviews
 });
 
