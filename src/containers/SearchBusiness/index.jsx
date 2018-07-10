@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux';
 import { filterBusiness } from '../../redux/actions/business';
+import Businesses from '../../components/Businesses';
 
 
 class SearchPage extends Component {
