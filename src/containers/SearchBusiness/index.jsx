@@ -9,11 +9,12 @@ class SearchPage extends Component {
         query: '',
         category: '',
         location: '',
-        results: []
+        results: [], 
+        page: 1
     }
 
     getInfo = () => {
-        axios.get(`https://weconnect-v3.herokuapp.com/api/v1/businesses?q=${this.state.query}&&category=${this.state.category}&&location=${this.state.location}`)
+        axios.get(`https://weconnect-v3.herokuapp.com/api/v1/businesses?q=${this.state.query}&&category=${this.state.category}&&location=${this.state.location}&page=${this.state.page}`)
             .then(({ data }) => {
                 this.setState({
                     results: data.results,
@@ -24,6 +25,19 @@ class SearchPage extends Component {
             
 
     }
+
+    nextPage = () => {
+		const page = this.state.page
+		this.setState({page: page + 1}, () => this.getInfo());
+    }
+    
+    prevPage = () => {
+		const page = this.state.page
+		if(page > 1){
+			return this.setState({page: page - 1}, () => this.getInfo());
+		}
+	}
+
 
     handleInputChange = () => {
         this.setState({
@@ -52,9 +66,10 @@ class SearchPage extends Component {
     }
 
     render() {
+        
         return (
             <div>
-                <div className="row container">
+                <div className="row">
                 <div className="col-md-4">
                         <form class="form">
                             <div class="input">
@@ -82,10 +97,13 @@ class SearchPage extends Component {
                             </div>
                         </form>
                     </div>
-
-                </div>
-                <div className="">
-                </div>
+                </div><br />
+                <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item" onClick={this.prevPage} ><a class="page-link" >Previous</a></li>
+                    <li class="page-item" onClick={this.nextPage}><a class="page-link">Next</a></li>
+                </ul>
+                </nav>
             </div>
         )
     }
