@@ -71,24 +71,5 @@ describe('Async actions', ()=> {
             });
         });
     });
-    describe('DELETE_BUSINESS action', ()=> {
-        it('should dispatch DELETE_BUSINESS on success', ()=> {
-            const message = 'Business deleted successfully';
-            const initialState = [{id : 1, businessname: 'new business'}, {id : 2, businessname: 'old business'}];
-            moxios.wait(()=> {
-                const request = moxios.requests.mostRecent();
-                request.respondWith({
-                    status : 200,
-                    response : message
-                });
-            });
-            const expectedAction = [{type: types.DELETE_BUSINESS }]; 
-            const store = mockStore({ business: initialState});
-            return store.dispatch(actions.deleteBusiness(1)).then(()=> {
-                expect(store.getActions().length).toEqual(expectedAction.length);
-            });
-        });
-    });
-
-
+ 
 })
