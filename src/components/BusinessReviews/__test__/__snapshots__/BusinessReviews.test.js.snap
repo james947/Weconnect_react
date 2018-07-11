@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ReviewsDisplay/> renders correctly 1`] = `
+<div>
+  <div
+    className="card"
+  >
+    <Connect(withRouter(ReviewPage)) />
+    No reviews for this business
+  </div>
+</div>
+`;
