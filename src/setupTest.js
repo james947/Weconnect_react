@@ -1,7 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { configure } from 'enzyme';
+import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import { createSerializer } from 'enzyme-to-json';
+
+expect.addSnapshotSerializer(createSerializer({mode: 'deep'}));
+configure({ adapter: new Adapter() });
+
 
 class LocalStorageMock {
     constructor() {
@@ -28,5 +32,3 @@ class LocalStorageMock {
   global.localStorage = new LocalStorageMock();
   global.shallow = shallow;
   global.React = React;
-
-configure({ adapter: new Adapter() });
