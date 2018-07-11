@@ -1,12 +1,6 @@
-
 language: node_js
-
-node_js: 
-  - stable
-
-# before_install:
-#   - npm install -g npm
-
+node_js:
+ - 8
 script:
  - yarn run build
  - yarn test
