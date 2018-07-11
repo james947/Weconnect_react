@@ -10,7 +10,7 @@ export const newBusiness = (business) => ({
 export function create(businessData) {
   return dispatch =>
     apiRequest.business.create(businessData).then(business => {
-      dispatch(business);
+      dispatch(newBusiness(business));
     });
 }
 
