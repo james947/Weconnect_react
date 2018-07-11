@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Businesses/> renders correctly 1`] = `
+<div>
+  <Connect(NavBar) />
+  <div
+    className="container"
+  >
+    <div
+      className="col-md-10"
+    >
+      <Connect(SearchPage) />
+      <Connect(FetchBusinesses) />
+    </div>
+  </div>
+  <Footer />
+</div>
+`;
