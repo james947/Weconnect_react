@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditForm/> renders correctly 1`] = `
+<div>
+  <Connect(NavBar) />
+  <div
+    className="auth-form col-md-4"
+  >
+    <div
+      className="panel panel-default"
+    >
+      <div
+        className="panel-body"
+      >
+        <form
+          onSubmit={[Function]}
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="businessName"
+            >
+              Business Name
+            </label>
+            <input
+              className="form-control"
+              name="businessname"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="businessName"
+            >
+              Description
+            </label>
+            <textarea
+              className="form-control"
+              id="comment"
+              name="description"
+              onChange={[Function]}
+              rows="3"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="businessName"
+            >
+              Category
+            </label>
+            <div
+              className="input-group mb-3"
+            >
+              <div
+                className="input-group-prepend"
+              >
+                <label
+                  className="input-group-text"
+                  htmlFor="inputGroupSelect01"
+                >
+                  Options
+                </label>
+              </div>
+              <select
+                className="custom-select"
+                name="category"
+                onChange={[Function]}
+                value=""
+              >
+                <option
+                  selected={true}
+                >
+                  Choose...
+                </option>
+                <option
+                  value="Electronics"
+                >
+                  Electronics
+                </option>
+                <option
+                  value="Housing"
+                >
+                  Housing
+                </option>
+                <option
+                  value="Interior design"
+                >
+                  Interior design
+                </option>
+                <option
+                  value="Photography"
+                >
+                  Photography
+                </option>
+              </select>
+            </div>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="email"
+            >
+              Location
+            </label>
+            <input
+              className="form-control"
+              name="location"
+              onChange={[Function]}
+              type="textArea"
+              value=""
+            />
+          </div>
+          <button
+            className="btn btn-success btn-block"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <Footer />
+</div>
+`;
