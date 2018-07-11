@@ -53,6 +53,24 @@ describe('Async actions', ()=> {
             })
         });
     });
+    describe('BUSINESS_UPDATED action', ()=> {
+        it('should dispatch BUSINESS_UPDATED on success', ()=> {
+            const data  = {business: {id : 1, businessname: 'updated bsuiness'}};
+            const initialState = [{id : 1, businessname: 'Andela'}, {id : 2, name: 'Tuskys'}];
+            moxios.wait(()=> {
+                const request = moxios.requests.mostRecent();
+                request.respondWith({
+                    status : 200,
+                    response : data
+                });
+            });
+            const expectedAction = [{"business": {"business": {"businessname": "updated bsuiness", "id": 1}}, "type": "EDIT_BUSINESS"}]; 
+            const store = mockStore({ businesses: initialState});
+            return store.dispatch(actions.editBusiness(data.business, 1)).then(()=> {
+                expect(store.getActions()).toEqual(expectedAction);
+            });
+        });
+    });
 
 
 })
