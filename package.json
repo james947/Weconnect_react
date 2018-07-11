@@ -64,7 +64,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test:coverage": "jest --coverage",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "jest --coverage --coverageReporters=text-lcov --collectCoverageFrom=src/**/*js | coveralls"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
@@ -84,6 +84,7 @@
       "!src/registerServiceWorker.js",
       "!src/reducers.js",
       "!src/apiRequests.js"
+      
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
