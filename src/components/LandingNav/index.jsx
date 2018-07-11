@@ -12,9 +12,6 @@ const LandingNav = () => (
       </button>
       <div className="collapse navbar-collapse" id="navMenu">
         <ul className="navbar-nav ml-auto">
-          <li>
-            <Link to="about">About</Link>
-          </li>
         </ul>
       </div>
 
