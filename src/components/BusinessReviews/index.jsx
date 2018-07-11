@@ -5,7 +5,7 @@ import { addReviews } from '../../redux/actions/business';
 import PostReviews from '../../containers/PostReviews';
 
 
-const ReviewsDisplay = (props) => (
+export const ReviewsDisplay = (props) => (
   <div>
     <div className="card">
       <PostReviews />
