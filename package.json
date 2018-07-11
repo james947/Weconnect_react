@@ -64,7 +64,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test:coverage": "jest --coverage",
-    "test": "jest --coverage --coverageReporters=text-lcov --collectCoverageFrom=src/**/*js | coveralls"
+    "test": "jest --coverage --coverageReporters=text-lcov --collectCoverageFrom=./src/**/*.js | coveralls"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
@@ -77,7 +77,7 @@
     "redux-mock-store": "^1.5.3"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTest.js",
+    "setupTestFrameworkScriptFile": "./src/setupTest.js",
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}",
       "!src/setupTest.js",
