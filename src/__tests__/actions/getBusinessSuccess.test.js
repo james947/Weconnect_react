@@ -1,6 +1,6 @@
 import * as actions from '../../redux/actions/business';
 import * as types from '../../types'
-
+import expect from "expect"
 
 describe('getBusinessSucces', () => {
     it('should return a list business', () => {

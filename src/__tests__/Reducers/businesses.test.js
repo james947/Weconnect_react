@@ -1,7 +1,7 @@
 import * as actions from '../../redux/actions/business';
 import eventsReducer from '../../redux/reducers/reducers';
 import businesses from '../../redux/reducers/reducers';
-
+import expect from "expect"
 describe('businessReducer', ()=> {
     it('should add all events to the store when GET_BUSINESSES is fired', ()=> {
         const initialState = [{businessname: 'andela'}];

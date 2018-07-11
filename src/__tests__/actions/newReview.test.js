@@ -1,6 +1,6 @@
 import * as actions from '../../redux/actions/business';
 import * as types from '../../types'
-
+import expect from "expect"
 
 describe('newReviews', () => {
     it('should retrun a posted review', () => {

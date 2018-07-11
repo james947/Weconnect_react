@@ -1,6 +1,7 @@
 import React from "react";
 import {shallow} from "enzyme";
 import Businesses from "../../components/Businesses";
+import expect from "expect"
 
 describe("<Businesses/>", () => {
     it("it should render a  div", () => {
