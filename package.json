@@ -29,13 +29,17 @@
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.4.0",
+    "expect": "^23.4.0",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
+    "ignore-styles": "^5.0.1",
     "ins": "0.0.0",
     "jest": "^23.3.0",
     "lodash": "^4.17.10",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -64,7 +68,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test:coverage": "jest --coverage",
-    "test": "jest --coverage --coverageReporters=text-lcov --collectCoverageFrom=./src/**/*.js | coveralls"
+    "test": "NODE_ENV=test   nyc   mocha --verbose --require babel-core/register --require ignore-styles --reporter spec ./src/setupTests.js --require mock-local-storage --recursive    \"./src/__tests__\""
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
@@ -84,7 +88,6 @@
       "!src/registerServiceWorker.js",
       "!src/reducers.js",
       "!src/apiRequests.js"
-      
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
