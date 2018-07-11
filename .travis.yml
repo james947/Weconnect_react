@@ -2,11 +2,13 @@
 language: node_js
 
 node_js: 
-- stable
+  - stable
+
 before_install:
   - npm install -g npm
 
-after_success: npm run coveralls
+after_success: 
+  - coveralls < coverage/lcov.info
 
 script:
-  - npm run test
+  - npm test -- --coverage
