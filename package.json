@@ -62,6 +62,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "test:coverage": "jest --coverage",
     "test": "jest --coverage --coverageReporters=text-lcov --collectCoverageFrom=src/**/*js | coveralls"
   },
   "devDependencies": {
@@ -77,7 +78,9 @@
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTest.js",
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
+      "src/**/*.{js,jsx,mjs}",
+      "!src/setupTest.js",
+      "!src/"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
