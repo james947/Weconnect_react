@@ -76,9 +76,7 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTest.js",
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
-    ],
+    "forceCoverageMatch": ["**/*.t.js"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
