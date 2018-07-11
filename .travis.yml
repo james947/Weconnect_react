@@ -1,7 +1,13 @@
+
 language: node_js
-node_js:
- - 8
+
+node_js: 
+- stable
+before_install:
+  - npm install -g npm
+
+after_success: 
+  - coveralls < coverage/lcov.in
+
 script:
- - yarn run build
- - yarn test
-after_success: 'yarn coveralls'
+  - npm run test
