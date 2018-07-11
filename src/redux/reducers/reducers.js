@@ -5,12 +5,7 @@ export default function businesses(state = [], action) {
   switch (action.type) {
   case types.GET_BUSINESS:
     return action.payload
-
-  case types.GET_BUSINES:
-    return  action.payload
   
-
-
   case types.DELETE_BUSINESS:
     return state.filter(businesses => businesses.id !== action.id);
 

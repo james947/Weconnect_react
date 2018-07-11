@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import { getBusinesses } from '../../redux/actions/business';
-import SearchBusiness from '../SearchBusiness';
 
 class FetchBusinesses extends Component {
   constructor(props) {

@@ -13,3 +13,6 @@
 .actions {
     margin: auto;
 }
+.row{
+    flex-direction: initial;
+}

@@ -1,6 +1,6 @@
 import * as actions from '../../redux/actions/user_auth';
 import * as types from '../../types'
-
+import expect from "expect"
 
 describe('userLoggedIn', () => {
     it('should create an action userLoggedOut', () => {

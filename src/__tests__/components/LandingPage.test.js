@@ -1,9 +1,10 @@
 import React from "react";
 import {shallow} from "enzyme";
+import expect from "expect"
 import LandingPage from "../../components/LandingPage/LandingPage";
 
-describe("landingnavigation bar ", () => {
-    it("it should render landingbody navbar  ", () => {
+describe("landing body", () => {
+    it("it should render landingbody, navbar, footer ", () => {
         expect (
             shallow(<LandingPage/>).find("div.landing").exists()).toBe(true);
         

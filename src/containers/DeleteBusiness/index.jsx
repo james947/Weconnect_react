@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteBusiness }  from '../../redux/actions/business';
 
-class DeleteBusiness extends Component {
-static PropTypes = {
+export class DeleteBusiness extends Component {
+static propTypes = {
   business_id: PropTypes.string,
   actions: PropTypes.object
 }
