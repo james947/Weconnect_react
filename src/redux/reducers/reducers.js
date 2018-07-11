@@ -9,10 +9,6 @@ export default function businesses(state = [], action) {
   case types.ADD_NEW_BUSINESS:
     return  [...state, action.payload]
   
-  
-  
-
-
   case types.DELETE_BUSINESS:
     return state.filter(businesses => businesses.id !== action.id);
 
