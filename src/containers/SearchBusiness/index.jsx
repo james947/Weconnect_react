@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux';
 import { filterBusiness } from '../../redux/actions/business';
-import Businesses from '../../components/Businesses';
+
 
 
 class SearchPage extends Component {
@@ -72,37 +72,37 @@ class SearchPage extends Component {
             <div>
                 <div className="row">
                 <div className="col-md-4">
-                        <form class="form">
-                            <div class="input">
-                                <div class="">
-                                    <input type="text" class="form-control" ref={input => this.category = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Category..." />
+                        <form className="form">
+                            <div className="input">
+                                <div className="">
+                                    <input type="text" className="form-control" ref={input => this.category = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Category..." />
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div className="col-md-4">
-                        <form class="form">
-                            <div class="input">
-                                <div class="">
-                                    <input type="text" class="form-control" ref={input => this.location = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Location..." />
+                        <form className="form">
+                            <div className="input">
+                                <div className="">
+                                    <input type="text" className="form-control" ref={input => this.location = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Location..." />
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div className="col-md-4">
-                        <form class="form">
-                            <div class="input">
-                                <div class="">
-                                    <input type="text" class="form-control" ref={input => this.search = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Search..." />
+                        <form className="form">
+                            <div className="input">
+                                <div className="">
+                                    <input type="text" className="form-control" ref={input => this.search = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Search..." />
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div><br />
                 <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item" onClick={this.prevPage} ><a class="page-link" >Previous</a></li>
-                    <li class="page-item" onClick={this.nextPage}><a class="page-link">Next</a></li>
+                <ul className="pagination">
+                    <li className="page-item" onClick={this.prevPage} ><a className="page-link" >Previous</a></li>
+                    <li className="page-item" onClick={this.nextPage}><a className="page-link">Next</a></li>
                 </ul>
                 </nav>
             </div>
