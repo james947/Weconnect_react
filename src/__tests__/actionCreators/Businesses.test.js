@@ -4,7 +4,6 @@ import moxios from 'moxios';
 import expect from 'expect';
 import * as actions from '../../redux/actions/business';
 import {instance} from '../../apiRequests'
-import * as types from '../../types'
 
 
 
