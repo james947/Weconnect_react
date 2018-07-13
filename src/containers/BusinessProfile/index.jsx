@@ -18,27 +18,26 @@ class ProfilePage extends Component {
 
       .catch(err=>{
         swal(err.response.data.message)
-        window.location.assign('/businesses')
-        
+        window.location.assign('/businesses')     
   
       })
       
-    axios.get(`https://weconnect-v3.herokuapp.com/api/v1/businesses/${this.props.match.params['id']}/reviews`)
-      .then(response => this.setState({ reviews: response.data }))
-
+      this.fetchReviews();
 
   }
+
+  fetchReviews = () => {
+    axios.get(`https://weconnect-v3.herokuapp.com/api/v1/businesses/${this.props.match.params['id']}/reviews`)
+      .then(response => this.setState({ reviews: response.data }))
+  }
   
-
-
   render() {
     return (
-      <BusinessesProfile state={this.state}/>
+      <BusinessesProfile fetchReviews={ this.fetchReviews } state={this.state}/>
 
 
     );
   }
 }
-
 
 export default ProfilePage;

@@ -8,7 +8,7 @@ import PostReviews from '../../containers/PostReviews';
 export const ReviewsDisplay = (props) => (
   <div>
     <div className="card">
-      <PostReviews />
+      <PostReviews fetchReviews={ props.fetchReviews }/>
       {props.state.length !== 0 ?
         props.state.map((review) =>
           (<div className="card-body card-reviews">

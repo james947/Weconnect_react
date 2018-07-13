@@ -30,7 +30,7 @@ const BusinessProfile = (props) => {
         </div> {/*end-of-col-md-9*/}
         <div className="col-md-3" />{/*end-of-col-md-3*/}
         <div className="col-md-9 Reviews">
-          <ReviewsDisplay state={reviews} business={data}/>
+          <ReviewsDisplay fetchReviews={props.fetchReviews} state={reviews} business={data}/>
         </div> {/*end-of-col-md-3*/}
       </div>
       <Footer/>
