@@ -10,7 +10,7 @@ class SearchPage extends Component {
         query: '',
         category: '',
         location: '',
-        results: [], 
+        results: [],
         page: 1
     }
 
@@ -19,25 +19,25 @@ class SearchPage extends Component {
             .then(({ data }) => {
                 this.setState({
                     results: data.results,
-                
+
                 })
                 this.props.filterBusiness(this.state.results)
             })
-            
+
 
     }
 
     nextPage = () => {
-		const page = this.state.page
-		this.setState({page: page + 1}, () => this.getInfo());
+        const page = this.state.page
+        this.setState({ page: page + 1 }, () => this.getInfo());
     }
-    
+
     prevPage = () => {
-		const page = this.state.page
-		if(page > 1){
-			return this.setState({page: page - 1}, () => this.getInfo());
-		}
-	}
+        const page = this.state.page
+        if (page > 1) {
+            return this.setState({ page: page - 1 }, () => this.getInfo());
+        }
+    }
 
 
     handleInputChange = () => {
@@ -67,43 +67,36 @@ class SearchPage extends Component {
     }
 
     render() {
-        
+
         return (
             <div>
-                <div className="row">
-                <div className="col-md-4">
-                        <form className="form">
-                            <div className="input">
-                                <div className="">
-                                    <input type="text" className="form-control" ref={input => this.category = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Category..." />
-                                </div>
-                            </div>
-                        </form>
+                <div className="input-group p-2">
+                        <div className="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" className="form-control" ref={input => this.search = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Search..." />
                     </div>
-                    <div className="col-md-4">
-                        <form className="form">
-                            <div className="input">
-                                <div className="">
-                                    <input type="text" className="form-control" ref={input => this.location = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Location..." />
-                                </div>
-                            </div>
-                        </form>
+
+                    <div className="input-group p-2">
+                        <div className="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
+
+                        </div>
+                        <input type="text" className="form-control" ref={input => this.location = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Location..." />
                     </div>
-                    <div className="col-md-4">
-                        <form className="form">
-                            <div className="input">
-                                <div className="">
-                                    <input type="text" className="form-control" ref={input => this.search = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Search..." />
-                                </div>
-                            </div>
-                        </form>
+
+                    <div className="input-group p-2">
+                        <div className="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
+                        </div>
+                        <input type="text" className="form-control" ref={input => this.category = input} onChange={this.handleInputChange} id="inlineFormInputGroup" placeholder="Category..." />
                     </div>
-                </div><br />
+                <br />
                 <nav aria-label="Page navigation example">
-                <ul className="pagination">
-                    <li className="page-item" onClick={this.prevPage} ><a className="page-link" >Previous</a></li>
-                    <li className="page-item" onClick={this.nextPage}><a className="page-link">Next</a></li>
-                </ul>
+                    <ul className="pagination">
+                        <li className="page-item" onClick={this.prevPage} ><a className="page-link" >Previous</a></li>
+                        <li className="page-item" onClick={this.nextPage}><a className="page-link">Next</a></li>
+                    </ul>
                 </nav>
             </div>
         )
