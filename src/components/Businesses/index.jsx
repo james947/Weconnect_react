@@ -8,9 +8,14 @@ const Businesses = () => (
   <div>
     <NavBar />
     <div className="container">
-        <div className="col-md-10">
-        <SearchBusiness/>
+        <div className="row">
+        <div className="col-md-2 businessDisplay">
+          <SearchBusiness/>
+         </div>
+       <div className="col-md-10">  
           <FetchBusinesses />
+        </div>
+    
         </div>
     </div>
     <Footer />

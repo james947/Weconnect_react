@@ -20,17 +20,20 @@ const BusinessProfile = (props) => {
             <div className="card-header">
               Profile
             </div>
-            <div className="card-body ProfileCard">
+            <div className="container businessProfile row" >
+            <div className="col-md-4 jumbotron" ><span className="image"><i className="far fa-image"></i></span></div>{/*end-of-col-md-3*/}
+            <div className="col-md-4 card-body ProfileCard">
               <h5>Business Name</h5><small><p>{data.businessname}</p></small>
               <h5>Description</h5><small><p>{data.description}</p></small>
               <h5>Category</h5><small><p>{data.category}</p></small>
               <h5>Location</h5><small><p>{data.location}</p></small>
             </div>
+            </div>
           </div>
         </div> {/*end-of-col-md-9*/}
         <div className="col-md-3" />{/*end-of-col-md-3*/}
-        <div className="col-md-9 Reviews">
-          <ReviewsDisplay state={reviews} business={data}/>
+        <div className="col-md-9 Reviews wrapper">
+          <ReviewsDisplay fetchReviews={props.fetchReviews} state={reviews} business={data}/>
         </div> {/*end-of-col-md-3*/}
       </div>
       <Footer/>
