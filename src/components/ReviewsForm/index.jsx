@@ -19,7 +19,7 @@ const ReviewsForm = (props) => (
                   <input type="text" className="form-control" onChange={props.onChange} value={props.data.title || ""} name="title" placeholder="title..."/>
                 </div>
                 <div className="form-group">
-                  <input type="text" className="form-control" onChange={props.onChange} value={props.data.review || ""} name="review" placeholder="review..."/>
+                  <textarea rows="2" type="text" className="form-control" onChange={props.onChange} value={props.data.review || ""} name="review" placeholder="review..."/>
                 </div>
                 <button type="submit" className="btn btn-primary btn-sm float-right">Submit</button>
               </form>
